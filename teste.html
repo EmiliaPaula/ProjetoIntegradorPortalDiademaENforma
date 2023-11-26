@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Busca de Academias em Diadema</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHnqxgQCpyf4F655D14tgutMf6zgwINTY&libraries=places"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Academias em Diadema</h1>
+
+  <label for="cep">CEP:</label>
+  <input type="text" id="cep" placeholder="Digite o CEP">
+
+  <label for="keyword">Palavra-chave:</label>
+  <input type="text" id="keyword" placeholder="Digite a palavra-chave">
+
+  <button onclick="buscarAcademias()">Buscar</button>
+
+  <div id="map" style="height: 400px; width: 100%;"></div>
+
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function buscarAcademias() {
+      var diadema = { lat: -23.6815, lng: -46.6222 }; // Coordenadas de Diadema, SP
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: diadema
+      });
+
+      var cep = document.getElementById('cep').value;
+      var keyword = document.getElementById('keyword').value;
+
+      var request = {
+        location: diadema,
+        radius: 1000, // Raio de busca em metros
+        type: ['gym'], // Tipo de lugar (academia)
+        keyword: keyword, // Palavra-chave de busca
+        // Adicione o filtro de CEP abaixo
+        // address_components são os componentes do endereço, incluindo o CEP
+        componentRestrictions: {
+          postalCode: cep
+        }
+      };
+
+      var service = new google.maps.places.PlacesService(map);
+
+      service.nearbySearch(request, function (results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+          preencherTabela(results);
+          adicionarMarcadores(map, results);
+        }
+      });
+    }
+
+    function preencherTabela(results) {
+      var tableBody = document.querySelector('#resultsTable tbody');
+      // Limpar a tabela antes de preencher com novos resultados
+      tableBody.innerHTML = '';
+
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        var row = tableBody.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+
+        cell1.innerHTML = place.name;
+        cell2.innerHTML = place.vicinity || place.formatted_address || 'N/A';
+        cell3.innerHTML = place.rating || 'N/A';
+      }
+    }
+
+    function adicionarMarcadores(map, results) {
+      var iconBase = 'https://maps.google.com/mapfiles/kml/paddle/';
+      var icons = {
+        black: {
+          icon: iconBase + 'blu-blank.png'
+        }
+      };
+
+      for (var i = 0; i < results.length; i++) {
+        adicionarMarcador(map, results[i], icons.black);
+      }
+    }
+
+    function adicionarMarcador(map, place, icon) {
+      var marker = new google.maps.Marker({
+        position: place.geometry.location,
+        map: map,
+        icon: icon.icon,
+        title: place.name
+      });
+
+      // Adicione um evento de clique para mostrar detalhes do local
+      marker.addListener('click', function () {
+        var contentString =
+          '<div><strong>' + place.name + '</strong></div>' +
+          '<div>Endereço: ' + (place.vicinity || place.formatted_address || 'N/A') + '</div>' +
+          '<div>Rating: ' + (place.rating || 'N/A') + '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        infowindow.open(map, this);
+      });
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHnqxgQCpyf4F655D14tgutMf6zgwINTY&libraries=places&callback=initMap">
+  </script>
+
+</body>
+
+</html>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Personal</title>
+  <title>Academias e Praças</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -24,8 +24,8 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHnqxgQCpyf4F655D14tgutMf6zgwINTY&libraries=places"></script>
 
-  <!-- Template Main CSS File -->
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -55,8 +55,6 @@
   }
 </style>
 
-</head>
-
 <body>
 
   <!-- ======= Header ======= -->
@@ -71,7 +69,7 @@
         <ul>
           <li><a class="nav-link scrollto " href="index.html">HOME</a></li>
           <li><a class="nav-link scrollto" href="academia.html">ACADEMIAS E PRAÇAS</a></li>
-          <!--<li><a class="nav-link scrollto" href="dicas.html">DICAS E BEM-ESTAR</a></li> -->
+          <!--<li><a class="nav-link scrollto" href="#services">DICAS E BEM-ESTAR</a></li> -->
           <li><a class="nav-link scrollto " href="nutricao.html">NUTRICÃO</a></li>
           <li><a class="nav-link scrollto" href="personal.html">PERSONAL</a></li>
 
@@ -92,10 +90,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Personal</h2>
+          <h2>Academias e Praças</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Personal</li>
+            <li>Academias e Praças</li>
           </ol>
         </div>
 
@@ -116,7 +114,7 @@
 
         <div class="section-title">
           <h2>Encontre</h2>
-          <p>um Personal pra chamar de seu</p>
+          <p>Sua academia ou praça</p>
         </div>
 
         <div class="row">
@@ -124,7 +122,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="assets/img/team/personal2.png" class="img-fluid" alt="">
+                <img src="assets/img/team/academia1.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -133,7 +131,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Michele Alice</h4>
+                <h4>Villa Fitness</h4>
                 <span>Rua Antônio Dias Adorno, 250</span>
               </div>
             </div>
@@ -142,7 +140,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="assets/img/team/personal1.png" class="img-fluid" alt="">
+                <img src="assets/img/team/academia2.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -151,7 +149,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Vitor Campelo</h4>
+                <h4>Panabianco</h4>
                 <span>Av. Presidente Kenedy, 488</span>
               </div>
             </div>
@@ -160,7 +158,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
-                <img src="assets/img/team/personal3.png" class="img-fluid" alt="">
+                <img src="assets/img/team/academia3.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -169,7 +167,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Lucas Martins</h4>
+                <h4>Smart fit</h4>
                 <span>Avenida Nossa Senhora das Vitórias, 188</span>
               </div>
             </div>
@@ -178,7 +176,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="400">
               <div class="member-img">
-                <img src="assets/img/team/personal4.png" class="img-fluid" alt="">
+                <img src="assets/img/team/academia4.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -187,7 +185,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Ana Paula Alves</h4>
+                <h4>Bluefit</h4>
                 <span>Av. Sete de Setembro, 97</span>
               </div>
             </div>
@@ -203,7 +201,7 @@
 
         <div class="section-title">
           <h2>BUSCAR</h2>
-          <p>Encontre o mais próximo de você</p>
+          <p>Encontre a mais próximo de você</p>
         </div>
 
         <div class="row mt-5">
@@ -232,13 +230,21 @@
                   <!--<textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea> -->
                 </div>
                 <div class="my-3">
-                  <!--<div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div> -->
-                  <div class="text-center"><button type="submit">BUSCAR ENDEREÇOS </button></div>
+                  <div class="text-center"><button type="button" onclick="buscarAcademias()">BUSCAR ENDEREÇOS </button></div>
             </form>
 
+            <div id="map" style="height: 400px; width: 100%;"></div>
+
+            <table id="resultsTable">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Endereço</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
 
         </div>
@@ -262,7 +268,6 @@
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <!--<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
@@ -302,6 +307,117 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script>
+    function buscarAcademias() {
+      var cep = document.getElementById('cep').value;
+
+      // Geocodificação para obter coordenadas a partir do CEP
+      geocodeCEP(cep, function (location) {
+        if (location) {
+          var diadema = location;
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: diadema
+          });
+
+          var keyword = "Academia";
+          var distance = 1000;
+
+          var request = {
+            location: diadema,
+            radius: parseInt(distance),
+            type: ['gym'],
+            keyword: keyword
+          };
+
+          var service = new google.maps.places.PlacesService(map);
+
+          service.nearbySearch(request, function (results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+              preencherTabela(results);
+              adicionarMarcadores(map, results);
+            }
+          });
+        } else {
+          alert('Não foi possível obter as coordenadas para o CEP fornecido.');
+        }
+      });
+    }
+
+    function geocodeCEP(cep, callback) {
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({
+        'address': cep
+      }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          var location = {
+            lat: results[0].geometry.location.lat(),
+            lng: results[0].geometry.location.lng()
+          };
+          callback(location);
+        } else {
+          callback(null);
+        }
+      });
+    }
+
+    function preencherTabela(results) {
+      var tableBody = document.querySelector('#resultsTable tbody');
+      tableBody.innerHTML = '';
+
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        var row = tableBody.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+
+        cell1.innerHTML = place.name;
+        cell2.innerHTML = place.vicinity || place.formatted_address || 'N/A';
+        cell3.innerHTML = place.rating || 'N/A';
+
+      }
+    }
+
+    function adicionarMarcadores(map, results) {
+      var iconBase = 'https://maps.google.com/mapfiles/kml/paddle/';
+      var icons = {
+        black: {
+          icon: iconBase + 'blu-blank.png'
+        }
+      };
+
+      for (var i = 0; i < results.length; i++) {
+        adicionarMarcador(map, results[i], icons.black);
+      }
+    }
+
+    function adicionarMarcador(map, place, icon) {
+      var marker = new google.maps.Marker({
+        position: place.geometry.location,
+        map: map,
+        icon: icon.icon,
+        title: place.name
+      });
+
+      marker.addListener('click', function () {
+        exibirDetalhes(place);
+      });
+    }
+
+    function exibirDetalhes(place) {
+      var contentString =
+        '<div><strong>' + place.name + '</strong></div>' +
+        '<div>Endereço: ' + (place.vicinity || place.formatted_address || 'N/A') + '</div>' +
+        '<div>Rating: ' + (place.rating || 'N/A') + '</div>';
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      infowindow.open(map, this);
+    }
+  </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -310,6 +426,9 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHnqxgQCpyf4F655D14tgutMf6zgwINTY&libraries=places&callback=initMap">
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
